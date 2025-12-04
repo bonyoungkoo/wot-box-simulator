@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Holiday Ops Box Simulator',
+  title: '연말연시 상자 시뮬레이터',
   description: 'Simulate World of Tanks Holiday Ops loot boxes with pity and refund rules.',
   icons: {
     icon: '/wot-box-sim/icon.png',

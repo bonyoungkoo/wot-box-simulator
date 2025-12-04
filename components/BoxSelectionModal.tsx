@@ -12,10 +12,10 @@ interface BoxOption {
 }
 
 const BOX_OPTIONS: BoxOption[] = [
-  { id: 'newyear', name: '새해', count: 3, image: '/box_blue.png' },
-  { id: 'christmas', name: '크리스마스', count: 11, image: '/box_green.png' },
-  { id: 'lunar', name: '정월 초하루', count: 25, image: '/box_red.png' },
-  { id: 'magic', name: '마법', count: 75, image: '/box_purple.png' },
+  { id: 'newyear', name: '새해', count: 3, image: 'box_blue.png' },
+  { id: 'christmas', name: '크리스마스', count: 11, image: 'box_green.png' },
+  { id: 'lunar', name: '정월 초하루', count: 25, image: 'box_red.png' },
+  { id: 'magic', name: '마법', count: 75, image: 'box_purple.png' },
 ];
 
 interface BoxSelectionModalProps {
