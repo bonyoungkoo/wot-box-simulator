@@ -214,7 +214,7 @@ export default function RewardModal({ isOpen, onClose }: RewardModalProps) {
       >
         <div className={styles.tooltipHeader}>전차 획득</div>
         <div className={styles.tooltipContent}>
-          {allTanks.map((tank, index) => (
+          {[...new Set(allTanks)].map((tank, index) => (
             <div key={`${tank.id}-${index}`} className={styles.tooltipItem}>
               <span className={styles.tierBadge}>{tank.tier}</span>
               <span className={styles.tankName}>{tank.name}</span>
