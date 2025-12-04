@@ -24,7 +24,7 @@ export default function RewardList() {
             {box.goldGained > 0 && (
               <div className={styles.rewardItem}>
                 <Image
-                  src="/gold.png"
+                  src="/wot-box-sim/gold.png"
                   alt="Gold"
                   width={40}
                   height={40}
@@ -36,7 +36,7 @@ export default function RewardList() {
             {box.creditsGained > 0 && (
               <div className={styles.rewardItem}>
                 <Image
-                  src="/credit.png"
+                  src="/wot-box-sim/credit.png"
                   alt="Credits"
                   width={40}
                   height={40}
@@ -48,7 +48,7 @@ export default function RewardList() {
             {box.premiumDaysGained > 0 && (
               <div className={styles.rewardItem}>
                 <Image
-                  src="/premium.png"
+                  src="/wot-box-sim/premium.png"
                   alt="Premium"
                   width={40}
                   height={40}
@@ -60,7 +60,7 @@ export default function RewardList() {
             {box.gotHighTank && (
               <div className={styles.rewardItem}>
                 <Image
-                  src="/tank.png"
+                  src="/wot-box-sim/tank.png"
                   alt="Tank"
                   width={40}
                   height={40}
@@ -72,7 +72,7 @@ export default function RewardList() {
             {box.gotLowTank && (
               <div className={styles.rewardItem}>
                 <Image
-                  src="/tank.png"
+                  src="/wot-box-sim/tank.png"
                   alt="Tank"
                   width={40}
                   height={40}

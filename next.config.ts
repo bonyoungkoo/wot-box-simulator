@@ -1,9 +1,7 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  images: {
-    unoptimized: true,
-  },
+  basePath: '/wot-box-sim',
 };
 
 export default nextConfig;

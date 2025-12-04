@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: 'Holiday Ops Box Simulator',
   description: 'Simulate World of Tanks Holiday Ops loot boxes with pity and refund rules.',
   icons: {
-    icon: '/icon.png',
+    icon: '/wot-box-sim/icon.png',
   },
 };
 

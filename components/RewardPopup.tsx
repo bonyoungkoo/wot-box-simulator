@@ -49,7 +49,7 @@ export default function RewardPopup({ isOpen, onClose, autoCloseDelay = 5000 }: 
                 {box.goldGained > 0 && (
                   <div className={styles.rewardItem}>
                     <Image
-                      src="/gold.png"
+                      src="/wot-box-sim/gold.png"
                       alt="Gold"
                       width={40}
                       height={40}
@@ -61,7 +61,7 @@ export default function RewardPopup({ isOpen, onClose, autoCloseDelay = 5000 }: 
                 {box.creditsGained > 0 && (
                   <div className={styles.rewardItem}>
                     <Image
-                      src="/credit.png"
+                      src="/wot-box-sim/credit.png"
                       alt="Credits"
                       width={40}
                       height={40}
@@ -75,7 +75,7 @@ export default function RewardPopup({ isOpen, onClose, autoCloseDelay = 5000 }: 
                 {box.premiumDaysGained > 0 && (
                   <div className={styles.rewardItem}>
                     <Image
-                      src="/premium.png"
+                      src="/wot-box-sim/premium.png"
                       alt="Premium"
                       width={40}
                       height={40}
@@ -87,7 +87,7 @@ export default function RewardPopup({ isOpen, onClose, autoCloseDelay = 5000 }: 
                 {box.gotHighTank && (
                   <div className={styles.rewardItem}>
                     <Image
-                      src="/tank.png"
+                      src="/wot-box-sim/tank.png"
                       alt="Tank"
                       width={40}
                       height={40}
@@ -99,7 +99,7 @@ export default function RewardPopup({ isOpen, onClose, autoCloseDelay = 5000 }: 
                 {box.gotLowTank && (
                   <div className={styles.rewardItem}>
                     <Image
-                      src="/tank.png"
+                      src="/wot-box-sim/tank.png"
                       alt="Tank"
                       width={40}
                       height={40}
@@ -111,7 +111,7 @@ export default function RewardPopup({ isOpen, onClose, autoCloseDelay = 5000 }: 
                 {box.gotStyle && (
                   <div className={styles.rewardItem}>
                     <Image
-                      src="/style.png"
+                      src="/wot-box-sim/style.png"
                       alt="3D Style"
                       width={40}
                       height={40}
@@ -123,7 +123,7 @@ export default function RewardPopup({ isOpen, onClose, autoCloseDelay = 5000 }: 
                 {box.gotAttachment && (
                   <div className={styles.rewardItem}>
                     <Image
-                      src="/3d_element.png"
+                      src="/wot-box-sim/3d_element.png"
                       alt="Attachment"
                       width={40}
                       height={40}

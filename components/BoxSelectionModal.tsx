@@ -54,7 +54,7 @@ export default function BoxSelectionModal({ isOpen, onClose, onSelect }: BoxSele
               <div className={styles.boxLabel}>{option.name}</div>
               <div className={styles.boxImageWrapper}>
                 <Image
-                  src={option.image}
+                  src={`/wot-box-sim/${option.image}`}
                   alt={option.name}
                   width={120}
                   height={120}

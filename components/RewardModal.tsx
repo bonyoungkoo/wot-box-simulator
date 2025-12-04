@@ -298,7 +298,7 @@ export default function RewardModal({ isOpen, onClose }: RewardModalProps) {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <Image src="/tank.png" alt="전차" width={48} height={48} />
+              <Image src="/wot-box-sim/tank.png" alt="전차" width={48} height={48} />
               <div className={styles.rewardInfo}>
                 <div className={styles.rewardLabel}>전차</div>
                 <div className={styles.rewardValue}>
@@ -310,7 +310,7 @@ export default function RewardModal({ isOpen, onClose }: RewardModalProps) {
 
           {summary.totalPremiumDays > 0 && (
             <div className={styles.rewardCard}>
-              <Image src="/premium.png" alt="프리미엄" width={48} height={48} />
+              <Image src="/wot-box-sim/premium.png" alt="프리미엄" width={48} height={48} />
               <div className={styles.rewardInfo}>
                 <div className={styles.rewardLabel}>월드 오브 탱크 프리미엄 계정</div>
                 <div className={styles.rewardValue}>{summary.totalPremiumDays}일</div>
@@ -320,7 +320,7 @@ export default function RewardModal({ isOpen, onClose }: RewardModalProps) {
 
           {summary.totalGold > 0 && (
             <div className={styles.rewardCard}>
-              <Image src="/gold.png" alt="골드" width={48} height={48} />
+              <Image src="/wot-box-sim/gold.png" alt="골드" width={48} height={48} />
               <div className={styles.rewardInfo}>
                 <div className={styles.rewardLabel}>골드</div>
                 <div className={`${styles.rewardValue} ${styles.highlight}`}>
@@ -332,7 +332,7 @@ export default function RewardModal({ isOpen, onClose }: RewardModalProps) {
 
           {summary.totalCredits > 0 && (
             <div className={styles.rewardCard}>
-              <Image src="/credit.png" alt="크레딧" width={48} height={48} />
+              <Image src="/wot-box-sim/credit.png" alt="크레딧" width={48} height={48} />
               <div className={styles.rewardInfo}>
                 <div className={styles.rewardLabel}>크레딧</div>
                 <div className={styles.rewardValue}>{summary.totalCredits.toLocaleString()}</div>
@@ -347,7 +347,7 @@ export default function RewardModal({ isOpen, onClose }: RewardModalProps) {
               onMouseEnter={handleStyleMouseEnter}
               onMouseLeave={handleStyleMouseLeave}
             >
-              <Image src="/style.png" alt="3D 스타일" width={48} height={48} />
+              <Image src="/wot-box-sim/style.png" alt="3D 스타일" width={48} height={48} />
               <div className={styles.rewardInfo}>
                 <div className={styles.rewardLabel}>3D 스타일</div>
                 <div className={styles.rewardValue}>{summary.styles.length}개</div>
@@ -362,7 +362,7 @@ export default function RewardModal({ isOpen, onClose }: RewardModalProps) {
               onMouseEnter={handleAttachmentMouseEnter}
               onMouseLeave={handleAttachmentMouseLeave}
             >
-              <Image src="/3d_element.png" alt="3D 부착물" width={48} height={48} />
+              <Image src="/wot-box-sim/3d_element.png" alt="3D 부착물" width={48} height={48} />
               <div className={styles.rewardInfo}>
                 <div className={styles.rewardLabel}>3D 부착물</div>
                 <div className={styles.rewardValue}>{summary.attachments.length}개</div>
