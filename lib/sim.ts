@@ -140,7 +140,7 @@ export function simulateBoxes(
             gotLowTank = selectedTank;
           }
           obtainedTanks.add(selectedTank.id);
-          pityCounter = 0;
+          
         }
       }
     }
