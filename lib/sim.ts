@@ -112,8 +112,6 @@ export function simulateBoxes(
     let gotStyle: StyleDef | undefined;
     let gotAttachment: AttachmentDef | undefined;
 
-    console.log(`${i + 1} pityCounter: ${pityCounter}`);
-
     // 1) Vehicle slot: either high-tier (with pity) or low-tier pull.
     const pityReady =
       config.pityEvery > 0 && pityCounter + 1 >= config.pityEvery && HIGH_TANK_POOL.length > 0;
@@ -149,6 +147,10 @@ export function simulateBoxes(
             // (선택) 다 소진됐으면 그냥 전체 LOW 풀에서 뽑아도 무방
             // s = pickWeighted(rng, LOW_TANK_POOL, (t) => config.lowTankWeights[t.id] ?? 0);
           }
+        }
+        if (s) {
+          gotLowTank = s;
+          obtainedTanks.add(s.id);
         }
       }
     }
@@ -266,6 +268,8 @@ export function simulateBoxes(
       pityCounterAfter: pityCounter,
     });
   }
+
+  console.log('items', items);
 
   return {
     items,

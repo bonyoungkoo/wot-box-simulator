@@ -9,7 +9,7 @@ import RewardPopup from './RewardPopup';
 import styles from './BoxOpeningInterface.module.css';
 
 export default function BoxOpeningInterface() {
-  const [selectedCount, setSelectedCount] = useState<1 | 5>(5);
+  const [selectedCount, setSelectedCount] = useState<1 | 5 | 15 | 250>(5);
   const [isOpening, setIsOpening] = useState(false);
   const [availableBoxes, setAvailableBoxes] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -90,6 +90,20 @@ export default function BoxOpeningInterface() {
           >
             5개
           </button>
+          {/* <button
+            className={`${styles.countButton} ${selectedCount === 15 ? styles.active : ''}`}
+            onClick={() => setSelectedCount(15)}
+            disabled={isOpening}
+          >
+            15개
+          </button>
+          <button
+            className={`${styles.countButton} ${selectedCount === 250 ? styles.active : ''}`}
+            onClick={() => setSelectedCount(250)}
+            disabled={isOpening}
+          >
+            250개
+          </button> */}
         </div>
         <button
           className={styles.openButton}
