@@ -112,6 +112,8 @@ export function simulateBoxes(
     let gotStyle: StyleDef | undefined;
     let gotAttachment: AttachmentDef | undefined;
 
+    console.log(`${i + 1} pityCounter: ${pityCounter}`);
+
     // 1) Vehicle slot: either high-tier (with pity) or low-tier pull.
     const pityReady =
       config.pityEvery > 0 && pityCounter + 1 >= config.pityEvery && HIGH_TANK_POOL.length > 0;
@@ -126,23 +128,26 @@ export function simulateBoxes(
           gotLowTank = selectedTank;
         }
         obtainedTanks.add(selectedTank.id);
-        pityCounter = 0;
+        // pityCounter = 0;
       }
     } else {
-      pityCounter = config.pityEvery > 0 ? Math.min(config.pityEvery - 1, pityCounter + 1) : 0;
       const dropLow = LOW_TANK_POOL.length > 0 && roll(rng, config.lowTankChance);
       if (dropLow) {
-        const selectedTank = pickTank('LOW');
-        if (selectedTank) {
-          if (selectedTank.category === 'HIGH') {
-            gotHighTank = selectedTank;
-          } else {
-            gotLowTank = selectedTank;
+        const availableLow = LOW_TANK_POOL.filter((t) => !obtainedTanks.has(t.id));
+        if (availableLow.length > 0) {
+          const s = pickWeighted(rng, availableLow, (t) => config.lowTankWeights[t.id] ?? 0);
+          if (s) {
+            gotLowTank = s;
+            obtainedTanks.add(s.id);
           }
-          obtainedTanks.add(selectedTank.id);
-          
         }
       }
+    }
+
+    if (pityReady || gotHighTank) {
+      pityCounter = 0;
+    } else {
+      pityCounter = config.pityEvery > 0 ? Math.min(config.pityEvery - 1, pityCounter + 1) : 0;
     }
 
     // 2) Duplicate handling + guaranteed gold per box.
