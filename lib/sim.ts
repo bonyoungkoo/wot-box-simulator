@@ -119,6 +119,8 @@ export function simulateBoxes(
       config.pityEvery > 0 && pityCounter + 1 >= config.pityEvery && HIGH_TANK_POOL.length > 0;
     const dropHigh = HIGH_TANK_POOL.length > 0 && (pityReady || roll(rng, config.highTankChance));
 
+    const collectionComplete = isCollectionComplete();
+
     if (dropHigh) {
       const selectedTank = pickTank('HIGH');
       if (selectedTank) {
@@ -133,18 +135,25 @@ export function simulateBoxes(
     } else {
       const dropLow = LOW_TANK_POOL.length > 0 && roll(rng, config.lowTankChance);
       if (dropLow) {
-        const availableLow = LOW_TANK_POOL.filter((t) => !obtainedTanks.has(t.id));
-        if (availableLow.length > 0) {
-          const s = pickWeighted(rng, availableLow, (t) => config.lowTankWeights[t.id] ?? 0);
-          if (s) {
-            gotLowTank = s;
-            obtainedTanks.add(s.id);
+        let s: TankDef | undefined;
+
+        if (collectionComplete) {
+          // ✅ 컬렉션 완성: LOW도 전체 풀에서 가중치로 그대로 뽑는다
+          s = pickWeighted(rng, LOW_TANK_POOL, (t) => config.lowTankWeights[t.id] ?? 0);
+        } else {
+          // 기존 로직 유지: 아직 못 모은 LOW 우선
+          const availableLow = LOW_TANK_POOL.filter((t) => !obtainedTanks.has(t.id));
+          if (availableLow.length > 0) {
+            s = pickWeighted(rng, availableLow, (t) => config.lowTankWeights[t.id] ?? 0);
+          } else {
+            // (선택) 다 소진됐으면 그냥 전체 LOW 풀에서 뽑아도 무방
+            // s = pickWeighted(rng, LOW_TANK_POOL, (t) => config.lowTankWeights[t.id] ?? 0);
           }
         }
       }
     }
 
-    if (pityReady || gotHighTank) {
+    if (gotHighTank) {
       pityCounter = 0;
     } else {
       pityCounter = config.pityEvery > 0 ? Math.min(config.pityEvery - 1, pityCounter + 1) : 0;
